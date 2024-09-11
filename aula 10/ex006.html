@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        div#area {
+            background-color: aquamarine;
+            color: white;
+            height: 200px;
+            width: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="area">  <!-- onclick="clicar()" onmouseenter="entrar()" onmouseout="sair ()"> definindo o método de disparo do evento-->
+        Interaja...
+    </div>
+
+    <script>
+        var a = window.document.getElementById('area')
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+
+        //vai informar o que vai acontecer quando acontecer o "clicar"
+        function clicar () { 
+
+            // criado um objeto chamado 'a' para fazer a ligação desse elemento dentro do JS com o elemento 'area' do HTML. Pode ser colocado para fora da FUNCTION para que esse objeto criado funcione para todas as outras tags e ão precise ficar criando o objeto a cada necessidade
+            var a = window.document.getElementById('area')
+
+            // vai fazer com que o conteúdo do objeto 'a' vai mudar o conteúdo de texto
+            a.innerText = 'Clicou'
+
+            //altera o estilo do elemento quando a ação acontecer
+            a.style.background = 'red'
+        }
+
+        function entrar () {
+
+            //teve que ser criado o mesmo objeto que tem na function anterior porque os objetos de uma função não podem ser acessados por outras funções
+            var a = document.getElementById('area')
+            a.innerText = 'Entrou.'
+        }
+
+        function sair() {
+            var a = document.getElementById('area')
+            a.innerText = 'Saiu!'
+            a.style.background = 'aquamarine'
+        }
+    </script>
+</body>
+</html>
