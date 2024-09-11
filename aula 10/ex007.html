@@ -4,6 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Somando números</title>
+    <style>
+        body{
+            font: normal 18pt arial;
+        }
+
+        input{
+            font: normal 18pt arial;
+            width: 100px;
+        }
+
+        div#res{
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
     <h1>Somando valores</h1>
@@ -12,27 +26,25 @@
     <input type="number" name="txtn2" id="txtn2">
     <input type="button" value="somar" onclick="somar()">
 
-    <div id="res">
-        <br> Resultado
-    </div>
+    <div id="res">Resultado</div>
 
     <script>
-        function somar(){
-          //pode ser selecionado o elemento do DOM pelo ID
-        var tn1 = window.document.getElementById('txtn1')
+        function somar() {
+            //pode ser selecionado o elemento do DOM pelo ID
+            var tn1 = window.document.getElementById('txtn1')
 
-        //pode ser selecionado o elemento do DOM pelo seletor CSS
-        var tn2 = window.document.querySelector('imput#txtn2')
+            //pode ser selecionado o elemento do DOM pelo seletor CSS
+            var tn2 = window.document.querySelector('input#txtn2')
 
-        var res = window.document.getElementById('res')
+            var res = window.document.getElementById('res')
 
-        //é preciso ter uma variável do valor de n1 e do n2 porque quando o dado vem de uma caixa de texto ele é considerado texto 
-        var n1 = Number(tn1.value)
-        var n2 = Number(tn2.value)
+            //é preciso ter uma variável do valor de n1 e do n2 porque quando o dado vem de uma caixa de texto ele é considerado texto 
+            var n1 = Number.parseInt (tn1.value)
+            var n2 = Number (tn2.value)
 
-        var s = n1 + n2
-        
-        res.innerHTML = s  
+            var s = n1 + n2
+            
+            res.innerHTML = `A soma entre os números entre ${n1} e ${n2} é igual a <strong>${s}</strong>`
         }
         
     
