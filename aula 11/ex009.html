@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1>Qual a sua nacionalidade?</h1>
+    Digite o país que você vive: 
+    <input type="text" name="txtnac" id="txtnac">
+    <input type="button" value="Gerar" onclick="gerar()">
+    <div id="nac"></div>
+
+    <script>
+        function gerar(){
+            var viv = window.document.getElementById('txtnac').value
+            var nac = window.document.querySelector('div#nac')
+
+            nac.innerHTML = `<p>Você vive no <strong>${viv}</strong>.`
+
+            if(viv == 'Brasil'){
+                nac.innerHTML += `Portando você é <strong>brasileiro</strong>.</p>`
+            } else {
+                nac.innerHTML += 'Portanto você é <strong>estrangeiro</strong>.'
+            }
+        }
+    </script>
+</body>
+</html>
