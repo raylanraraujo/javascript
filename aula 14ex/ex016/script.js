@@ -9,8 +9,35 @@ function contar() {
   var nini = Number(ini.value)
   var nfim = Number(fim.value)
   var npas = Number(pas.value)
-  res.innerHTML = '';
 
+  if (ini.value.length == 0 || fim.value.length == 0 || pas.value.length == 0) {
+    res.innerHTML = 'Impossível de contar.'
+  } 
+  
+  else {
+    res.innerHTML = 'Contando...'
+
+    if (npas <= 0) {
+      alert('Impossível de contar')
+      p = 1
+    }
+
+    if (nini < nfim) {
+      for (c = nini; c <= nfim; c += npas)
+      res.innerHTML += ` ${c} `
+    } 
+
+    else {
+      for (c = nini; c>=nfim; c -= npas)
+      res.innerHTML += ` ${c} `
+    }
+    
+
+  }
+
+ 
+
+  /*
   if (ini.value.length == 0) {
     res.innerHTML = 'Impossível contar. Insira um número para iniciar!'
   } else{
@@ -18,6 +45,6 @@ function contar() {
       res.innerHTML += `${c} &#9755;`;
     }
   }
-
+*/
  
 } 
