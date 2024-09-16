@@ -12,27 +12,27 @@ function contar() {
 
   if (ini.value.length == 0 || fim.value.length == 0 || pas.value.length == 0) {
     res.innerHTML = 'Impossível de contar.'
-  } 
   
-  else {
-    res.innerHTML = 'Contando...'
+  } else {
+    res.innerHTML = 'Contando...<br>'
+  
 
-    if (npas <= 0) {
+    if (npas<=0){
       alert('Impossível de contar')
-      p = 1
+      npas = 1
     }
 
     if (nini < nfim) {
       for (c = nini; c <= nfim; c += npas)
-      res.innerHTML += ` ${c} `
+      res.innerHTML += ` ${c} \u{1F449}`
     } 
 
     else {
       for (c = nini; c>=nfim; c -= npas)
-      res.innerHTML += ` ${c} `
+      res.innerHTML += ` ${c} \u{1F449}`
     }
     
-
+    res.innerHTML += `\u{1F3c1}`
   }
 
  
