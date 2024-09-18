@@ -1,17 +1,26 @@
 let numero = document.getElementById('inum')
-let res = document.getElementById('finalizar')
-
-numero = 2
+let tab = document.getElementById('itab')
+let 
 
 function adicionar() {
-    let conjunto = []
-    conjunto.push(numero.value)
-    if (numero.value < 0 || numero.value > 100){
-        finalizar.innerHTML = '[Erro] Número inválido!'
-    }else {
-
-        finalizar.innerHTML += `Valor ${numero.value} foi adicionado. <p>`
-       
+    let n = Number(inum.value)
+    if (numero.value.length == 0 || n < 0 || n > 100 ){
+        alert("Insira um número válido")
+    } else {
+        /*alert('tudo ok')*/
+        for (var c = 1 ; c < 2 ; c++){
+            let valor = document.createElement('option')
+            valor.text = `O número ${n} foi adicionado.`
+            valor.value += `tab${c}`
+            tab.appendChild(valor)  
+        }
+        
     }
-    console.log(conjunto)
+   
+}
+
+function finalizar(){
+    let add = document.getElementById('option')
+    res.innerHTML = `O valor adicionado foi ${add}`
+
 }

@@ -16,6 +16,10 @@ section {
     box-shadow: 3px px 10px rgba(0, 0, 0, 0.308);
 }
 
+select{
+    width:200px;
+}
+
 footer {
     color: white;
     text-align: center;
